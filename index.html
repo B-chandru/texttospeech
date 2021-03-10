@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#64b5f6"/>
+    <meta name="description"   content="text to speech coverter,textospeak,texttospeech">
+    <meta name="keywords" content="texttospeech,textospeak">
+    <link rel="shortcut icon" href="img/logo192.png" type="image/png">
+    <title>texttospeech</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/logo192.png">
+    <style>
+
+  *{
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body{
+    background-color: #42a5f5db;
+  }
+    .contain{
+            display: grid;
+            place-items: center;
+        }
+        h1{
+            text-transform: capitalize;
+            color: white;
+        }
+        #textarea{
+            border: 2px solid black;
+            background-color: white;
+        }
+        button{
+   letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    width: 137px;
+    height: 30px;
+    border-radius: 5px;
+    color: #f7f3f3;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contain">
+            <h1>TEXTTOSPEECH</h1>
+            <textarea id="textarea" cols="40" rows="20"></textarea><br>
+            <button onclick="speak()">speak</button>
+
+            
+        </div>
+    </div>
+    <script>  
+
+        function speak(){
+         var textarea= new SpeechSynthesisUtterance(document.getElementById("textarea").value);
+            var voices= window.speechSynthesis.getVoices();
+            textarea.voice= voices[3];
+             window.speechSynthesis.speak(textarea);
+        }
+
+        </script>
+        <script src="app.js"></script>
+</body>
+</html>
