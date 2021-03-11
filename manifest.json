@@ -1,6 +1,6 @@
 {
-  "short_name": "texttospeech",
-  "name": "texttospeech",
+  "short_name": "TexttoSpeech",
+  "name": "TexttoSpeech",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#64b5f6",
